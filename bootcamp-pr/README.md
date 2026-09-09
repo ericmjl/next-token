@@ -27,6 +27,6 @@ studies), scale, and a bridge to foundation models (AlphaFold, scGPT,
 Geneformer, Enformer) that hands off to Session 6.
 
 - Live site: deployed by Alper (Docker/Compose; see the repo README)
-- Source: https://github.com/ericmjl/next-token
+- Source: <https://github.com/ericmjl/next-token>
 - Zero runtime network dependencies; presenter mode for the amphitheater
 - Stays draft until after the Sept 18 teach
