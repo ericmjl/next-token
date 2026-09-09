@@ -1,0 +1,16 @@
+app/templates/beats/beat03.html
+  h_923f9eef54c2c1 20
+app/templates/beats/beat04.html
+  h_923f9eef54c2c1 22,25-28,31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "fbcb1ce7f00f0ee00188cdc0615d19de7ef4a4d2",
+  "prompts": {},
+  "humans": {
+    "h_923f9eef54c2c1": {
+      "author": "Eric Ma <ericmajinglong@gmail.com>"
+    }
+  }
+}
