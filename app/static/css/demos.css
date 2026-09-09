@@ -577,6 +577,11 @@
   max-width: 48rem;
 }
 
+.table-scroll:focus-visible {
+  outline: 2px solid var(--pen);
+  outline-offset: 2px;
+}
+
 .beat-table { border-collapse: collapse; width: 100%; min-width: 34rem; }
 
 .beat-table th, .beat-table td {
