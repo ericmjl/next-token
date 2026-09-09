@@ -1,0 +1,80 @@
+.dockerignore
+  h_923f9eef54c2c1 1-8
+.gitignore
+  h_923f9eef54c2c1 1-6
+.markdownlint.json
+  h_923f9eef54c2c1 1-4
+Dockerfile
+  h_923f9eef54c2c1 1-26
+PLAN.md
+  h_923f9eef54c2c1 1-107
+README.md
+  h_923f9eef54c2c1 1-87
+app/corpus.py
+  h_923f9eef54c2c1 1-61
+app/lm.py
+  h_923f9eef54c2c1 1-129
+app/main.py
+  h_923f9eef54c2c1 1-168
+app/static/css/demos.css
+  h_923f9eef54c2c1 1-682
+app/static/css/theme.css
+  h_923f9eef54c2c1 1-533
+app/static/js/cloud.js
+  h_923f9eef54c2c1 1-125
+app/static/js/htmx.min.js
+  h_923f9eef54c2c1 1
+app/static/js/interactions.js
+  h_923f9eef54c2c1 1-186
+app/static/js/nav.js
+  h_923f9eef54c2c1 1-123
+app/templates/base.html
+  h_923f9eef54c2c1 1-69
+app/templates/beats/beat01.html
+  h_923f9eef54c2c1 1-32
+app/templates/beats/beat02.html
+  h_923f9eef54c2c1 1-34
+app/templates/beats/beat03.html
+  h_923f9eef54c2c1 1-38
+app/templates/beats/beat04.html
+  h_923f9eef54c2c1 1-36
+app/templates/beats/beat05.html
+  h_923f9eef54c2c1 1-42
+app/templates/beats/beat06.html
+  h_923f9eef54c2c1 1-96
+app/templates/beats/beat07.html
+  h_923f9eef54c2c1 1-65
+app/templates/beats/beat08.html
+  h_923f9eef54c2c1 1-60
+app/templates/beats/beat09.html
+  h_923f9eef54c2c1 1-109
+app/templates/beats/beat10.html
+  h_923f9eef54c2c1 1-83
+app/templates/index.html
+  h_923f9eef54c2c1 1-31
+app/templates/partials/continue.html
+  h_923f9eef54c2c1 1-5
+app/templates/partials/roll.html
+  h_923f9eef54c2c1 1-17
+app/templates/partials/tokens.html
+  h_923f9eef54c2c1 1-7
+app/templates/partials/training.html
+  h_923f9eef54c2c1 1-18
+compose.yaml
+  h_923f9eef54c2c1 1-7
+pyproject.toml
+  h_923f9eef54c2c1 1-15
+uv.lock
+  h_923f9eef54c2c1 1-978
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "7bc60e134ca23592b4e0b9041ea723efdb4eadad",
+  "prompts": {},
+  "humans": {
+    "h_923f9eef54c2c1": {
+      "author": "Eric Ma <ericmajinglong@gmail.com>"
+    }
+  }
+}
