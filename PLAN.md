@@ -30,8 +30,8 @@ From the 2026-09-04 planning call with Alper and Tommy:
 
 | Date | Milestone | Status |
 | --- | --- | --- |
-| 2026-09-08 | Repo scaffolded, stack proven end to end, beats 1, 3, 5 live | done 2026-09-08 |
-| 2026-09-09 | All ten beats drafted with working demos | done 2026-09-09 |
+| 2026-09-08 | Repo scaffolded, stack proven end to end, sections 1, 3, 5 live | done 2026-09-08 |
+| 2026-09-09 | All ten sections drafted with working demos | done 2026-09-09 |
 | 2026-09-09 | Ten-reviewer pass run and fixes applied | done 2026-09-09 |
 | 2026-09-09 | Docker build verified offline; repo pushed; handoff email drafted | done 2026-09-09 |
 | 2026-09-16 | Test link to Alper (needs his server), deploy | on Alper |
@@ -49,11 +49,11 @@ fixes:
   hepatic JNK signaling pathway"), Gellatly is K.J. with the positioning-not-
   recruitment finding stated correctly, Wang is Y.; the temperature demo now
   renders the reshaped distribution, so the bars move with the slider.
-- **Voice/unslop**: Beat 6 opener de-antithesized, quiz de-anonymized to second
+- **Voice/unslop**: hallucination-section opener de-antithesized, quiz de-anonymized to second
   person (no invented colleagues), contractions pass, straight quotes
   everywhere, zero em dashes in copy.
-- **Pedagogy**: predict-first prompts on beats 1-5 and 8, say-back lines on
-  beats 2-5, a Monday-takeaway box at the end of Beat 9, quiz gets a reset.
+- **Pedagogy**: predict-first prompts on sections 1-5 and 8, removed say-back lines;
+  a Monday-takeaway box at the end of the limits section, quiz gets a reset.
 - **Accessibility**: skip link, pencil-faint swapped for pencil on all text
   roles, rule-strong darkened to pass 3:1 for component boundaries, scale/loss
   dim states raised, aria-live on all graded outcomes, presenter mode now
@@ -73,17 +73,17 @@ Branch `eric/session1-part-a-explainer` on
 
 - `session1-ai-foundations-responsible-ai.md`: under Part A, link the explainer
   as the teaching instrument for the section; add it to Materials.
-- `materials/part-a/README.md`: how the explainer maps to the session beats,
+- `materials/part-a/README.md`: how the explainer maps to the session sections,
   how to run it locally, how Alper deploys it.
 - Stays draft until after the teach, then ready for review.
 
 ## Multi-agent review pipeline
 
-Runs against the built site once all beats are drafted. Each reviewer gets the
+Runs against the built site once all sections are drafted. Each reviewer gets the
 rendered page plus the commission context above, and returns findings; fixes
 are consolidated and applied in one pass.
 
-1. **Coherence**: does the arc hang together, do beats build on each other, no orphan concepts.
+1. **Coherence**: does the arc hang together, do sections build on each other, no orphan concepts.
 2. **Audience spectrum**: two personas, a first-year grad student and a skeptical famous PI; does the page serve both without boring or insulting either.
 3. **Accuracy**: ML correctness, including pressure-testing the interpolation framing so it earns the claim rather than overclaiming it.
 4. **Aesthetics**: visual hierarchy, spacing, rhythm.
@@ -103,5 +103,5 @@ are consolidated and applied in one pass.
   licensing questions).
 - Sampling happens server-side so temperature is real; nondeterminism across
   identical requests is a feature, it is the lesson.
-- Deterministic seeded layout for the Beat 5 cloud so the picture is stable
+- Deterministic seeded layout for the interpolation-section cloud so the picture is stable
   while it is being explained.

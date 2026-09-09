@@ -351,20 +351,6 @@ code {
   max-width: 40rem !important;
 }
 
-.predict::before { content: "Predict. "; font-family: var(--mono); font-style: normal; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
-
-.sayback {
-  margin: 1.1rem 0 0 !important;
-  padding-top: .9rem;
-  border-top: 1px dashed var(--rule-strong);
-  font-family: var(--serif);
-  font-style: italic;
-  color: var(--pencil) !important;
-  max-width: 40rem !important;
-}
-
-.sayback::before { content: "Say it back. "; font-family: var(--mono); font-style: normal; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--keep); }
-
 .takeaway {
   margin: 2.2rem 0 0;
   border: 1px solid var(--rule);
@@ -374,6 +360,8 @@ code {
   padding: 1.2rem 1.4rem;
   max-width: 48rem;
 }
+
+.takeaway .subhead { display: block; margin-bottom: .35rem; }
 
 .takeaway p { margin: 0 !important; max-width: none !important; color: var(--ink) !important; font-size: 1.02rem; }
 .takeaway strong { color: var(--keep); }

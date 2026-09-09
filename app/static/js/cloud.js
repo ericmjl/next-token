@@ -1,4 +1,4 @@
-/* The interpolation cloud for Beat 5.
+/* The interpolation cloud for the interpolation section.
    Draws two distributions of "text": the small cluster is one researcher's
    career of reading, the wide cloud is the model's training distribution.
    The ask button drops a query question into the big cloud, because that is

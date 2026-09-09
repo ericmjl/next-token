@@ -1,11 +1,11 @@
-/* Interactions for the beats that grade, light up, or quiz:
-   citation marks (Beat 6), the scale slider (Beat 7), and the failure quiz
-   (Beat 9). Plain DOM, no dependencies. */
+/* Interactions for the sections that grade, light up, or quiz:
+   citation marks (the hallucination section), the scale slider, and the failure quiz
+   (the limits section). Plain DOM, no dependencies. */
 
 (function () {
   "use strict";
 
-  /* ---------- Beat 6: mark the citations, then check ---------- */
+  /* ---------- Hallucination section: mark the citations, then check ---------- */
 
   var citeDemo = document.querySelector('[data-demo="citations"]');
   if (citeDemo) {
@@ -53,12 +53,12 @@
             correct++;
             card.classList.add("is-right");
             verdict.textContent = really
-              ? "Right: real, one of the bootcamp's anchor studies."
+              ? "Right: real, straight from the bootcamp's reading list."
               : "Caught. " + why;
           } else {
             card.classList.add("is-wrong");
             verdict.textContent = really
-              ? "This one is real; it anchors one of the bootcamp's own studies."
+              ? "This one is real; it's on the bootcamp's reading list."
               : "This one is fabricated. " + why;
           }
         });
@@ -66,7 +66,7 @@
           var opener = answered < cards.length
             ? "You marked " + answered + " of " + cards.length + " and caught " + correct + "."
             : "You caught " + correct + " of " + cards.length + ".";
-          caption.textContent = opener + " From inside the model, every citation is equally fluent. Fluency is its native output, so fluency can never be your evidence. The habit that catches fakes, checking against the primary source, is exactly what Part B turns into discipline.";
+          caption.textContent = opener + " From inside the model, every citation is equally fluent. Fluency is its native output, so fluency can never be your evidence. Checking each reference against the primary source is the habit that catches fakes; Part B turns that habit into concrete rules.";
         }
       });
     }
@@ -88,7 +88,7 @@
     }
   }
 
-  /* ---------- Beat 7: the scale slider ---------- */
+  /* ---------- The scale slider ---------- */
 
   var scaleSlider = document.getElementById("scale-slider");
   if (scaleSlider) {
@@ -120,7 +120,7 @@
     updateScale();
   }
 
-  /* ---------- Beat 6: the inline reference marks jump to their cards ---------- */
+  /* ---------- Hallucination section: the inline reference marks jump to their cards ---------- */
 
   Array.prototype.slice.call(document.querySelectorAll(".cite-ref")).forEach(function (ref) {
     ref.addEventListener("click", function () {
@@ -133,7 +133,7 @@
     });
   });
 
-  /* ---------- Beat 9: which beat explains it ---------- */
+  /* ---------- Limits section: which idea explains it ---------- */
 
   Array.prototype.slice.call(document.querySelectorAll(".quiz-q")).forEach(function (q) {
     var answer = q.getAttribute("data-answer");

@@ -4,22 +4,22 @@
 interactive scrolling explainer built for Session 1, Part A. This note maps it
 to the session and documents how it runs.
 
-## Beat map (30 to 45 minute teach)
+## Section map (30 to 45 minute teach)
 
-| Beat | Minutes | What happens |
+| Section | Minutes | What happens |
 | --- | --- | --- |
-| Hero + Beat 1 One trick | 5 | The room predicts a sentence ending; the toy model takes over |
-| Beat 2 Tokens | 3 | Tokenize CRISPR-Cas9 and lab vocabulary with a production tokenizer |
-| Beat 3 Dice and temperature | 4 | Probability bars, sampling, the temperature knob, consumer vs API |
-| Beat 4 Training | 4 | Slider drives how much text the model read; loss falls live |
-| Beat 5 The big library | 4 | The interpolation insight; the room's niche questions land in-distribution |
-| Beat 6 Confidently wrong | 6 | Spot the fabricated citation (anchor studies mixed with fakes) |
-| Beat 7 Scale | 3 | Ten orders of magnitude, emergence hedged honestly |
-| Beat 8 Foundation models | 4 | AlphaFold, scGPT, Geneformer, Enformer; hands off to Session 6 |
-| Beat 9 Limits and the handoff | 5 | Failure table, quiz, the Monday takeaway, Alper takes Part B |
-| Beat 10 Take it with you | 0-1 | Point at the glossary, FAQ, and background shelf |
+| Hero + 1 One trick | 5 | The room predicts a sentence ending; the toy model takes over |
+| 2 Tokens | 3 | Tokenize CRISPR-Cas9 and lab vocabulary with a production tokenizer |
+| 3 Dice and temperature | 4 | Probability bars, sampling, the temperature knob, consumer vs API |
+| 4 Training | 4 | Slider drives how much text the model read; loss falls live |
+| 5 The big library | 4 | The interpolation insight; the room's niche questions land in-distribution |
+| 6 Confidently wrong | 6 | Spot the fabricated citation (anchor studies mixed with fakes) |
+| 7 Scale | 3 | Ten orders of magnitude, emergence hedged honestly |
+| 8 Foundation models | 4 | AlphaFold, scGPT, Geneformer, Enformer; hands off to Session 6 |
+| 9 Limits and the handoff | 5 | Failure table, quiz, the Monday takeaway, Alper takes Part B |
+| 10 Take it with you | 0-1 | Point at the glossary, FAQ, and background shelf |
 
-The site drives the pacing: keyboard arrows jump between beats, `P` toggles
+The site drives the pacing: keyboard arrows jump between sections, `P` toggles
 presenter mode for the amphitheater, and every demo has a reset.
 
 ## Run it

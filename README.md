@@ -32,7 +32,7 @@ Health check for the deployment: `GET /api/health`.
 
 ## What is on the page
 
-Ten beats, designed for a 30 to 45 minute teach in front of a mixed room of
+Ten sections, designed for a 30 to 45 minute teach in front of a mixed room of
 students and PIs:
 
 1. **One trick**: predict the next chunk, then let the toy model finish your sentence
@@ -46,7 +46,7 @@ students and PIs:
 9. **Limits and the handoff**: failure modes become habits, a quiz, then hands off to the responsible-AI session
 10. **Take it with you**: glossary, FAQ, background shelf
 
-Teaching affordances: keyboard jumping between beats (`←` `→` or `J` `K`),
+Teaching affordances: keyboard jumping between sections (`←` `→` or `J` `K`),
 presenter mode (`P`) that rescales the whole page including demo cards for the
 amphitheater, predict-first prompts and say-back lines for the room, a rail that
 tracks where you are, dark mode, and zero runtime dependencies on the outside
@@ -72,7 +72,7 @@ app/
   main.py        FastAPI app: page + demo endpoints
   lm.py          the character-level n-gram model (count-based, backoff, temperature)
   corpus.py      the small original biology corpus the toy model reads
-  templates/     base layout, page, beats, htmx partials
+  templates/     base layout, page, section templates, htmx partials
   static/        css, vendored htmx, nav.js, interactions.js, cloud.js
 Dockerfile       python:3.12-slim, pinned deps, tokenizer cache baked in, healthcheck
 compose.yaml     single service, port 8000

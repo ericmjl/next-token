@@ -1,7 +1,7 @@
 <section class="beat" id="beat-09">
-  <p class="eyebrow">Beat 09</p>
+  <p class="eyebrow">Section 09</p>
   <h2>Know where the trick breaks, then use it anyway</h2>
-  <p>Every failure mode you'll hear about this fall traces back to a beat you just
+  <p>Every failure mode you'll hear about this fall traces back to something you just
   worked through. Once you own the mechanism, failures become predictable, and each
   predictable failure comes with a habit that catches them.</p>
 
@@ -16,27 +16,27 @@
       <tbody>
         <tr>
           <td>The model makes something up</td>
-          <td>Prediction without lookup, Beat 6</td>
+          <td>Prediction without lookup</td>
           <td>Verify claims against primary sources</td>
         </tr>
         <tr>
           <td>Same prompt, different answer</td>
-          <td>The dice roll, Beat 3</td>
+          <td>Sampling, the dice roll</td>
           <td>Log model, settings, and prompts; expect wobble</td>
         </tr>
         <tr>
           <td>Confident about a world that changed last month</td>
-          <td>The library has an edge date, Beat 5, and nothing you type adds to it</td>
+          <td>The library has an edge date, and nothing you type adds to it</td>
           <td>Check current sources for anything time-sensitive</td>
         </tr>
         <tr>
           <td>Repeats the field's old mistakes</td>
-          <td>Mimics the training distribution, Beat 4</td>
+          <td>Mimics the training distribution</td>
           <td>Read outputs with the literature's biases in mind</td>
         </tr>
         <tr>
           <td>Echoes whatever sensitive text you pasted</td>
-          <td>Its entire view of you is the text you hand it, Beat 2; nothing in the mechanism keeps a secret</td>
+          <td>Its entire view of you is the text you hand it; nothing in the mechanism keeps a secret</td>
           <td>Keep patient and unpublished data out of consumer tools</td>
         </tr>
       </tbody>
@@ -44,25 +44,25 @@
   </div>
 
   <div class="demo" data-demo="quiz">
-    <p class="demo-lede">Before you go: four failure reports. Name the beat that explains
-    each one.</p>
+    <p class="demo-lede">Before you go: four failure reports. Which idea explains each
+    one?</p>
     <div class="quiz">
       <div class="quiz-q" data-answer="b">
         <p class="quiz-prompt">1. You ask the same question twice and get two different
         protocols.</p>
         <div class="quiz-choices">
-          <button type="button" class="chip" data-choice="a">Beat 2, tokens</button>
-          <button type="button" class="chip" data-choice="b">Beat 3, the dice roll</button>
-          <button type="button" class="chip" data-choice="c">Beat 6, prediction without lookup</button>
+          <button type="button" class="chip" data-choice="a">Tokenization</button>
+          <button type="button" class="chip" data-choice="b">Sampling, the dice roll</button>
+          <button type="button" class="chip" data-choice="c">Prediction without lookup</button>
         </div>
         <p class="quiz-verdict" hidden aria-live="polite" data-why="Sampling means every roll is a fresh roll. Identical inputs give slightly different outputs by design."></p>
       </div>
       <div class="quiz-q" data-answer="c">
         <p class="quiz-prompt">2. Your paragraph cites a paper that turns out not to exist.</p>
         <div class="quiz-choices">
-          <button type="button" class="chip" data-choice="a">Beat 5, the library's edge date</button>
-          <button type="button" class="chip" data-choice="b">Beat 3, the dice roll</button>
-          <button type="button" class="chip" data-choice="c">Beat 6, prediction without lookup</button>
+          <button type="button" class="chip" data-choice="a">The library's edge date</button>
+          <button type="button" class="chip" data-choice="b">The dice roll</button>
+          <button type="button" class="chip" data-choice="c">Prediction without lookup</button>
         </div>
         <p class="quiz-verdict" hidden aria-live="polite" data-why="Nothing in the mechanism checks references. A plausible-looking citation is just a fluent continuation."></p>
       </div>
@@ -70,9 +70,9 @@
         <p class="quiz-prompt">3. You ask about a preprint posted yesterday and get a
         summary that's fluently wrong.</p>
         <div class="quiz-choices">
-          <button type="button" class="chip" data-choice="a">Beat 5, the library's edge date</button>
-          <button type="button" class="chip" data-choice="b">Beat 7, scale</button>
-          <button type="button" class="chip" data-choice="c">Beat 2, tokens</button>
+          <button type="button" class="chip" data-choice="a">The library's edge date</button>
+          <button type="button" class="chip" data-choice="b">Scale</button>
+          <button type="button" class="chip" data-choice="c">Tokenization</button>
         </div>
         <p class="quiz-verdict" hidden aria-live="polite" data-why="The training library ends somewhere. Anything newer is outside the cloud, so the model fills it in from the nearest patterns it has."></p>
       </div>
@@ -80,9 +80,9 @@
         <p class="quiz-prompt">4. Your analysis suggestion uses a statistical method the
         field moved away from decades ago.</p>
         <div class="quiz-choices">
-          <button type="button" class="chip" data-choice="a">Beat 8, foundation models</button>
-          <button type="button" class="chip" data-choice="b">Beat 4, it mimics its training distribution</button>
-          <button type="button" class="chip" data-choice="c">Beat 1, one trick</button>
+          <button type="button" class="chip" data-choice="a">Foundation models</button>
+          <button type="button" class="chip" data-choice="b">It mimics its training data</button>
+          <button type="button" class="chip" data-choice="c">The one-trick mechanism</button>
         </div>
         <p class="quiz-verdict" hidden aria-live="polite" data-why="The library holds the whole literature, including the parts the field has since retracted or outgrown. Old patterns are still patterns."></p>
       </div>
@@ -96,15 +96,14 @@
   </div>
 
   <div class="takeaway">
-    <p><strong>If your lab asks on Monday, here's the whole thing.</strong> A language
-    model predicts the next token over a library bigger than anyone could read in a
-    lifetime, so fluent answers come from interpolating within that library's patterns.
-    They land outside the truth when the most plausible continuation happens to be false,
-    because nothing in the mechanism checks truth.</p>
+    <span class="subhead">The short version</span>
+    <p>A language model predicts the next token over a library bigger than anyone could
+    read in a lifetime, so fluent answers come from interpolating within that library's
+    patterns. They land outside the truth when the most plausible continuation happens to
+    be false, because nothing in the mechanism checks truth.</p>
   </div>
 
-  <p>This is also where I hand the microphone to Alper. The habits in that table become
-  concrete rules in Part B: protecting patient data, verification discipline, disclosure,
-  reproducibility, and the cases where you leave the model out of it entirely. He has
-  war stories, and they're worth staying for.</p>
+  <p>Alper's Part B turns the habits in that table into concrete rules: protecting patient
+  data, verification discipline, disclosure, reproducibility, and the cases where you
+  leave the model out of it entirely. He has war stories, and they're worth staying for.</p>
 </section>

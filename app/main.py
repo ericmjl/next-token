@@ -2,7 +2,7 @@
 
 Built for the UMass Chan AI for Bioinformatics bootcamp (Session 1, Part A).
 The whole app is a FastAPI server that renders one scrolling page of teaching
-beats and serves a handful of tiny endpoints that make the core concepts
+sections and serves a handful of tiny endpoints that make the core concepts
 tangible: next-character prediction, tokenization, temperature, sampling, and
 what training on more text actually changes.
 """
@@ -25,7 +25,7 @@ TEMPLATES = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 LM = CharNGram(CORPUS, order=6)
 ENCODING = tiktoken.get_encoding("cl100k_base")
 
-# Beat 4: one model per stage of reading. The held-out tail is excluded from
+# The training demo: one model per stage of reading. The held-out tail is excluded from
 # training at every stage, so the falling surprise on it is honest learning,
 # never memorization of the exact sentences being scored.
 _HELD_OUT = CORPUS[-300:]

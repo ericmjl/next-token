@@ -50,7 +50,7 @@ class CharNGram:
     def average_bits_per_char(self, text: str, smoothing: float = 0.05) -> float:
         """How surprised the model is by text it did not train on, in bits/char.
 
-        Used by the Beat 4 demo to make 'the model is learning' visible: the
+        Used by the training demo to make 'the model is learning' visible: the
         number falls as the model reads more of the corpus. A little smoothing
         keeps unseen characters from producing infinities at tiny stages.
         """
