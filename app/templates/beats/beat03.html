@@ -17,7 +17,7 @@
     <p class="demo-lede">Roll it yourself. The bars show the model's top candidates for
     the next character after "The", reshaped by the temperature you set. The highlighted
     one is what the die picked this time.</p>
-    <form class="demo-form demo-form-column" hx-get="/api/roll" hx-target="#roll-out" hx-swap="innerHTML" hx-include="[name='temperature'],[name='prefix']" hx-disabled-elt="find button">
+    <form class="demo-form demo-form-column" hx-get="/api/roll" hx-target="#roll-out" hx-swap="innerHTML" hx-disabled-elt="find button">
       <div class="temp-row">
         <label for="temp-slider">Temperature</label>
         <input type="range" id="temp-slider" name="temperature" min="0.05" max="2" step="0.05" value="0.8" oninput="document.getElementById('temp-readout').textContent = this.value">

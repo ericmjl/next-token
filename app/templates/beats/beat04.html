@@ -19,13 +19,16 @@
     <p class="demo-lede">Drag the slider to decide how much text the model has read. Then
     look at two things: how surprised it is by text it has never seen, and what it writes
     when prompted.</p>
-    <form class="demo-form demo-form-column" hx-get="/api/training" hx-target="#training-out" hx-swap="innerHTML" hx-trigger="input changed delay:250ms, load" hx-include="[name='stage']" hx-sync="this:replace" hx-disabled-elt="find button">
+    <div class="demo-form demo-form-column">
       <div class="temp-row">
         <label for="stage-slider">Corpus read</label>
-        <input type="range" id="stage-slider" name="stage" min="1" max="6" step="1" value="1" oninput="document.getElementById('stage-readout').textContent = this.value + ' of 6'">
+        <input type="range" id="stage-slider" name="stage" min="1" max="6" step="1" value="1"
+               hx-get="/api/training" hx-target="#training-out" hx-swap="innerHTML"
+               hx-trigger="load, input delay:250ms" hx-sync="this:replace"
+               oninput="document.getElementById('stage-readout').textContent = this.value + ' of 6'">
         <output id="stage-readout" class="temp-readout" for="stage-slider">1 of 6</output>
       </div>
-    </form>
+    </div>
     <div id="training-out" class="demo-out" aria-live="polite"></div>
     <p class="demo-caption">The falling bar is training. The changing text is the payoff:
     soup, then English-shaped soup, then biology-shaped sentences with the facts slightly
