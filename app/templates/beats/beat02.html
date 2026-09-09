@@ -1,0 +1,34 @@
+<section class="beat" id="beat-02">
+  <p class="eyebrow">Beat 02</p>
+  <h2>Text becomes numbers</h2>
+  <p>Before a model can predict anything, it has to read. Models read in chunks called
+  tokens. A token is a common cluster of characters: everyday words get their own token,
+  rarer words get split into pieces. By the time text reaches the model, it has become a
+  list of numbers, one ID per token, and that list is the model's entire view of
+  everything you typed.</p>
+  <p>Tokenization explains a family of quirks that otherwise look like stupidity. Ask a
+  model how many letters are in <em>deoxyribonucleic</em> and it may miscount, because it
+  never saw letters at all; it saw opaque ID numbers. The same goes for exact strings from
+  the lab bench, where one wrong letter changes what a reagent or a variant means. Watch
+  what a production tokenizer does to vocabulary your lab uses daily.</p>
+
+  <div class="demo" data-demo="tokens">
+    <p class="predict">Predict first: where do the boundaries land inside
+    <em>deoxyribonucleic</em>? How many pieces?</p>
+    <p class="demo-lede">Type anything, then tokenize it. Watch where the boundaries land,
+    especially on long bio words.</p>
+    <form class="demo-form" hx-get="/api/tokenize" hx-target="#tokenize-out" hx-swap="innerHTML" hx-disabled-elt="find button">
+      <label class="visually-hidden" for="tokenize-text">Text to tokenize</label>
+      <input type="text" id="tokenize-text" name="text" value="CRISPR-Cas9 edits deoxyribonucleic acid in the cell nucleus" maxlength="200" autocomplete="off" spellcheck="false" required>
+      <button class="btn" type="submit">Tokenize it</button>
+    </form>
+    <div id="tokenize-out" class="demo-out" aria-live="polite">
+      <p class="demo-note">The tokens will appear here.</p>
+    </div>
+    <p class="demo-caption">Every chip is one token, with its ID number underneath. The
+    model's whole world is sequences of these IDs. Our toy model reads one letter at a
+    time so you can watch it work; production models read tokens. Same trick, different
+    chunk size.</p>
+    <p class="sayback">Say it back: the model never sees letters. It sees ID numbers.</p>
+  </div>
+</section>

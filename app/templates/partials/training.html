@@ -1,0 +1,18 @@
+<div class="train-grid">
+  <div class="loss-ladder">
+    <span class="subhead">Surprise at unseen text, in bits per character</span>
+    {% for s in stages %}
+    <div class="loss-row{{ ' is-current' if loop.index0 == current }}">
+      <span class="loss-label">{{ (s.frac * 100) | int }}%</span>
+      <span class="bar-track"><span class="bar-fill loss-bar" style="width: {{ (s.bits / 6 * 100) | round(1) }}%"></span></span>
+      <span class="loss-bits">{{ s.bits }} bits/char</span>
+    </div>
+    {% endfor %}
+    <p class="demo-note">Lower is better. Scored on text the model never trained on.</p>
+  </div>
+  <div class="train-sample">
+    <span class="subhead">What it writes</span>
+    <p class="train-text">{{ sample }}</p>
+    <p class="demo-note">After reading {{ chars }} characters, {{ frac }}% of the library, prompted with "The cell".</p>
+  </div>
+</div>

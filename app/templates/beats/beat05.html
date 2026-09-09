@@ -1,0 +1,42 @@
+<section class="beat" id="beat-05">
+  <p class="eyebrow">Beat 05</p>
+  <h2>It looks like magic because the library is bigger than your life</h2>
+  <p>Here is the line I keep coming back to: a language model mimics the training
+  distribution of text, and that distribution is bigger than anything any of us could
+  read in a lifetime. So when you ask about a niche proteomics method at midnight and a
+  fluent answer comes back, the question feels out of the ordinary to you. For the model,
+  it sits in well-charted territory, surrounded by millions of pages that say similar
+  things.</p>
+  <p>That's why the right mental picture is interpolation, not retrieval. The model itself
+  never looks anything up. Every answer lands somewhere inside the cloud of text it has
+  seen, and the cloud is so vast that almost everything a scientist can think to ask
+  already lives inside it. The exceptions have a shape of their own, and Beat 9 maps
+  them. (When a chat app searches the web mid-answer, that's a separate tool stapled onto
+  the same predictor, and Part B covers where that line sits.)</p>
+
+  <div class="demo" data-demo="cloud">
+    <p class="predict">Give me the most niche question in your field, the one you're sure
+    nobody has written down. That's the one I'll ask.</p>
+    <p class="demo-lede">Ask something that feels out of the ordinary and watch where it
+    lands. Each dot is a piece of text: the small dense cluster is what one careful
+    researcher reads in a career, the vast cloud is what the model read during training.</p>
+    <div class="cloud-stage" tabindex="0" role="region" aria-label="Comparison of one researcher's reading against the model's training data">
+      <svg id="cloud-svg" viewBox="0 0 900 420" role="img" aria-label="A small cluster of dots representing one researcher's reading next to a vast cloud of dots representing the model's training data">
+        <g id="cloud-big"></g>
+        <g id="cloud-small"></g>
+        <g id="cloud-queries"></g>
+        <text class="cloud-label" x="150" y="112" text-anchor="middle">your career of reading</text>
+        <text class="cloud-label" x="884" y="30" text-anchor="end">the model's training distribution</text>
+      </svg>
+    </div>
+    <div class="demo-form">
+      <button class="btn" id="cloud-ask" type="button">Ask something that feels out of the ordinary</button>
+      <button class="chip" id="cloud-clear" type="button">Clear the asks</button>
+    </div>
+    <p class="demo-caption" id="cloud-caption" aria-live="polite">Questions that feel novel
+    to us still land in-distribution for the model. The cloud has an edge, though: training
+    stopped on a date, and that edge is where the exceptions begin.</p>
+    <p class="sayback">Say it back: the model never looks anything up; it lands somewhere
+    inside the cloud it read.</p>
+  </div>
+</section>

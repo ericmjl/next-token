@@ -1,0 +1,96 @@
+<section class="beat" id="beat-06">
+  <p class="eyebrow">Beat 06</p>
+  <h2>Confidently wrong is the mechanism, working normally</h2>
+  <p>A hallucination is the model doing exactly what Beats 1 through 5 said it does, on a
+  question where the fluent continuation happens to be false. There's no lookup table to
+  consult and no alarm that rings when a prediction strays past what the model actually
+  knows. There's only the next most plausible token.</p>
+  <p>This is what makes the failure mode dangerous in research: fabricated references
+  arrive in perfect formatting, with plausible author lists, real journals, and tidy page
+  numbers. Below is the exercise we designed for this bootcamp. It mixes real citations
+  from the bootcamp's reading list with fabricated ones. Mark each one, then check
+  yourself.</p>
+
+  <div class="demo" data-demo="citations">
+    <p class="demo-lede">A reviewer sent you this paragraph. Two of the five references are
+    fabricated. Trust your reading, then check your marks.</p>
+    <div class="cite-paragraph">
+      <p>Hepatic JNK signaling has become a central node in metabolic disease research.
+      Loss of JNK1/2 in the liver reshapes the transcriptome through the PPAR&alpha;&ndash;FGF21
+      axis <button type="button" class="cite-ref" data-ref="1">[1]</button>, and chronic
+      JNK blockade has been reported to protect against diet-induced steatosis through
+      FGF21-independent routes <button type="button" class="cite-ref" data-ref="2">[2]</button>.
+      In inflammatory skin disease, single-cell profiling of vitiligo showed an expansion
+      of effector CD8&#8314; T cells, with CCR5 positioning regulatory T cells to restrain
+      disease <button type="button" class="cite-ref" data-ref="3">[3]</button>.
+      More recently, a single-cell atlas of photosensitive skin described MMP9&#8314;
+      myeloid circuits organized by keratinocyte&ndash;fibroblast crosstalk
+      <button type="button" class="cite-ref" data-ref="4">[4]</button>, consistent with the
+      spatial mapping of a keratinocyte&rarr;fibroblast&rarr;myeloid axis driving
+      photosensitivity <button type="button" class="cite-ref" data-ref="5">[5]</button>.</p>
+    </div>
+
+    <ol class="cite-list">
+      <li class="cite-card" data-ref="1" data-real="true">
+        <p class="cite-text">Vernia S., et al. (2014). "The PPAR&alpha;&ndash;FGF21 hormone
+        axis contributes to metabolic regulation by the hepatic JNK signaling pathway."
+        <em>Cell Metabolism</em> 20(3):512&ndash;525.</p>
+        <div class="cite-marks">
+          <button type="button" class="chip" data-mark="true">Real</button>
+          <button type="button" class="chip" data-mark="false">Fabricated</button>
+        </div>
+        <p class="cite-verdict" hidden aria-live="polite"></p>
+      </li>
+      <li class="cite-card" data-ref="2" data-real="false"
+          data-why="The paper does not exist. The title recombines pieces of reference 1 and flips FGF21 dependence into something plausible; that is interpolation landing outside the truth.">
+        <p class="cite-text">Marquez-Herrera R., et al. (2019). "FGF21-independent
+        hepatoprotective effects of chronic JNK inhibition in diet-induced steatosis."
+        <em>Cell Metabolism</em> 29(4):912&ndash;925.</p>
+        <div class="cite-marks">
+          <button type="button" class="chip" data-mark="true">Real</button>
+          <button type="button" class="chip" data-mark="false">Fabricated</button>
+        </div>
+        <p class="cite-verdict" hidden aria-live="polite"></p>
+      </li>
+      <li class="cite-card" data-ref="3" data-real="true">
+        <p class="cite-text">Gellatly K.J., et al. (2021). Vitiligo single-cell study:
+        effector T cell expansion and CCR5-dependent positioning of regulatory T cells.
+        <em>Science Translational Medicine</em>.</p>
+        <div class="cite-marks">
+          <button type="button" class="chip" data-mark="true">Real</button>
+          <button type="button" class="chip" data-mark="false">Fabricated</button>
+        </div>
+        <p class="cite-verdict" hidden aria-live="polite"></p>
+      </li>
+      <li class="cite-card" data-ref="4" data-real="false"
+          data-why="The paper does not exist. It mimics the real photosensitivity study in reference 5, with a made-up author pair and volume numbers.">
+        <p class="cite-text">Okonkwo A. &amp; Reyes T. (2022). "Single-cell atlas of
+        photosensitive skin reveals MMP9&#8314; myeloid circuits." <em>Nature
+        Immunology</em> 23(11):1745&ndash;1758.</p>
+        <div class="cite-marks">
+          <button type="button" class="chip" data-mark="true">Real</button>
+          <button type="button" class="chip" data-mark="false">Fabricated</button>
+        </div>
+        <p class="cite-verdict" hidden aria-live="polite"></p>
+      </li>
+      <li class="cite-card" data-ref="5" data-real="true">
+        <p class="cite-text">Wang Y., et al. (2026). Spatial mapping of a
+        keratinocyte&rarr;fibroblast&rarr;myeloid circuit driving photosensitivity.
+        <em>Nature Immunology</em>.</p>
+        <div class="cite-marks">
+          <button type="button" class="chip" data-mark="true">Real</button>
+          <button type="button" class="chip" data-mark="false">Fabricated</button>
+        </div>
+        <p class="cite-verdict" hidden aria-live="polite"></p>
+      </li>
+    </ol>
+    <div class="demo-form">
+      <button class="btn" type="button" id="cite-check">Check my marks</button>
+      <button class="chip" type="button" id="cite-reset">Reset</button>
+    </div>
+    <p class="demo-caption" id="cite-caption" aria-live="polite">From inside the model, every citation is
+    equally fluent. Fluency is its native output, so fluency can never be your evidence.
+    The habit that catches fakes, checking against the primary source, is exactly what
+    Part B turns into discipline.</p>
+  </div>
+</section>

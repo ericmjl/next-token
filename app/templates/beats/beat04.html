@@ -1,0 +1,36 @@
+<section class="beat" id="beat-04">
+  <p class="eyebrow">Beat 04</p>
+  <h2>Where the numbers come from</h2>
+  <p>Nobody handed the model its probabilities. It earned them. During training, the model
+  makes a guess at every position in the text, compares its guess with what the text
+  actually says next, and nudges itself a little toward the truth. Billions of nudges
+  later, the patterns of the library live in the model's parameters, the stored numbers
+  training adjusts.</p>
+  <p>This is why training data matters so much: the model can only mimic the distribution
+  it was shown. Our toy corpus is four short paragraphs of biology. A frontier model's
+  library is closer to the whole readable internet. The mechanism is identical, and so is
+  the catch: whatever patterns sit in the library, flawed and biased and outdated alike,
+  end up in the model. Answering you afterwards is called inference, and it's the cheap
+  part; training is the expensive part.</p>
+
+  <div class="demo" data-demo="training">
+    <p class="predict">Before I drag: as I move toward fifteen percent of the library,
+    will it write soup, English-shaped soup, or biology? Vote.</p>
+    <p class="demo-lede">Drag the slider to decide how much text the model has read. Then
+    look at two things: how surprised it is by text it has never seen, and what it writes
+    when prompted.</p>
+    <form class="demo-form demo-form-column" hx-get="/api/training" hx-target="#training-out" hx-swap="innerHTML" hx-trigger="input changed delay:250ms, load" hx-include="[name='stage']" hx-sync="this:replace" hx-disabled-elt="find button">
+      <div class="temp-row">
+        <label for="stage-slider">Corpus read</label>
+        <input type="range" id="stage-slider" name="stage" min="1" max="6" step="1" value="1" oninput="document.getElementById('stage-readout').textContent = this.value + ' of 6'">
+        <output id="stage-readout" class="temp-readout" for="stage-slider">1 of 6</output>
+      </div>
+    </form>
+    <div id="training-out" class="demo-out" aria-live="polite"></div>
+    <p class="demo-caption">The falling bar is training. The changing text is the payoff:
+    soup, then English-shaped soup, then biology-shaped sentences with the facts slightly
+    scrambled. Scale that same loop up by a factor of a billion, and you get the frontier
+    models.</p>
+    <p class="sayback">Say it back: training is guess, compare, nudge, billions of times.</p>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+<p class="tok-count"><strong>{{ count }}</strong> tokens</p>
+<div class="tok-strip">
+  {% for t in tokens %}
+  <span class="tok"><span class="tok-piece">{{ t.piece }}</span><span class="tok-id">{{ t.id }}</span></span>
+  {% endfor %}
+</div>
+<p class="demo-note">Boundaries from cl100k, a tokenizer from the GPT-3.5/4 family. Different model families cut the text differently; the idea, chunks with ID numbers, is the same everywhere.</p>

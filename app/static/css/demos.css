@@ -1,0 +1,682 @@
+/* Demo-specific styles: temperature, probability bars, the continuation box,
+   and the interpolation cloud. All sizes are fixed where content changes
+   length, so nothing jumps while you are teaching. */
+
+/* ---------- temperature control ---------- */
+
+.temp-row {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  width: 100%;
+}
+
+.temp-row label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--pencil);
+  white-space: nowrap;
+}
+
+.temp-row input[type="range"] {
+  flex: 1 1 16rem;
+  max-width: 22rem;
+  accent-color: var(--pen);
+  height: 1.4rem;
+}
+
+.temp-readout {
+  font-family: var(--mono);
+  font-size: .92rem;
+  color: var(--ink);
+  min-width: 3ch;
+  text-align: right;
+  white-space: nowrap;
+}
+
+#scale-readout { min-width: 13ch; }
+
+.temp-row input[type="range"]:focus-visible {
+  outline: 2px solid var(--pen);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ---------- probability bars ---------- */
+
+.roll-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 10.5rem;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.bars { display: flex; flex-direction: column; gap: .45rem; min-width: 0; }
+
+.bar-row {
+  display: grid;
+  grid-template-columns: 2ch minmax(0, 1fr) 4rem;
+  gap: .7rem;
+  align-items: center;
+}
+
+.bar-char {
+  font-family: var(--mono);
+  font-size: .95rem;
+  color: var(--ink-soft);
+  background: none;
+  padding: 0;
+  text-align: center;
+}
+
+.bar-track {
+  display: block;
+  height: .8rem;
+  background: var(--ground);
+  border: 1px solid var(--rule-strong);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  display: block;
+  height: 100%;
+  background: var(--pen);
+  border-radius: 1px;
+  transition: width .25s ease;
+  transform-origin: left;
+  animation: grow .35s ease;
+}
+
+@keyframes grow { from { transform: scaleX(0); } }
+
+.bar-pct {
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--pencil);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bar-pct.is-picked { font-weight: 700; color: var(--keep); }
+
+.bar-char.is-picked,
+.bar-fill.is-picked { background: var(--keep); color: var(--keep); }
+
+.bar-char.is-picked {
+  font-weight: 700;
+  color: var(--keep);
+  background: var(--keep-wash);
+  border-radius: 3px;
+}
+
+.roll-result {
+  border-left: 1px solid var(--rule);
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+  min-height: 12rem;
+}
+
+.picked-char {
+  font-family: var(--mono);
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--keep);
+  background: none;
+  padding: 0;
+  animation: pick-pop .25s ease-out;
+}
+
+@keyframes pick-pop { from { transform: scale(.55); opacity: 0; } }
+
+.demo-note {
+  margin: .2rem 0 0 !important;
+  font-size: .8rem;
+  color: var(--pencil) !important;
+  max-width: none !important;
+}
+
+/* ---------- continuation output ---------- */
+
+.continue-out {
+  background: var(--ground);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: .9rem 1rem 1rem;
+  font-family: var(--mono);
+  font-size: .92rem;
+  line-height: 1.65;
+  color: var(--ink);
+  overflow-wrap: break-word;
+}
+
+.continue-out .prefix { color: var(--pencil); }
+
+.continue-out .continuation {
+  color: var(--ink);
+  background: var(--pen-wash);
+  border-radius: 2px;
+}
+
+.continue-out .cursor {
+  display: inline-block;
+  width: .55em;
+  height: 1.1em;
+  margin-left: .15em;
+  vertical-align: text-bottom;
+  background: var(--pen);
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ---------- interpolation cloud ---------- */
+
+.cloud-stage {
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--ground);
+  padding: .5rem;
+  overflow-x: auto;
+}
+
+#cloud-svg {
+  display: block;
+  width: 100%;
+  min-width: 34rem;
+  height: auto;
+}
+
+.cloud-label {
+  font-family: var(--mono);
+  font-size: .9rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  fill: var(--pencil);
+  paint-order: stroke;
+  stroke: var(--ground);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+
+.pt-big { fill: var(--pencil-faint); opacity: .85; }
+.pt-small { fill: var(--pen); opacity: .85; }
+.pt-query { fill: var(--keep); opacity: .95; }
+
+.pt-query { animation: land .5s ease; transform-box: fill-box; transform-origin: center; }
+
+@keyframes land {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.6); }
+  100% { transform: scale(1); opacity: .95; }
+}
+
+@media (max-width: 40rem) {
+  .roll-grid { grid-template-columns: minmax(0, 1fr); }
+  .roll-result {
+    border-left: none;
+    border-top: 1px solid var(--rule);
+    padding-left: 0;
+    padding-top: 1rem;
+    min-height: 0;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem 1.2rem;
+  }
+  .picked-char { font-size: 2.2rem; }
+  .roll-result .subhead { width: 100%; }
+}
+
+/* ---------- tokenizer chips (Beat 2) ---------- */
+
+.tok-count {
+  margin: 0 0 .6rem !important;
+  font-size: .9rem;
+  color: var(--ink-soft) !important;
+}
+
+.tok-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+.tok {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .1rem;
+  background: var(--surface);
+  border: 1px solid var(--rule-strong);
+  border-radius: 3px;
+  padding: .25rem .45rem .2rem;
+}
+
+.tok-piece {
+  font-family: var(--mono);
+  font-size: .88rem;
+  color: var(--ink);
+  white-space: pre;
+}
+
+.tok-id {
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--pencil);
+}
+
+/* ---------- training ladder (Beat 4) ---------- */
+
+.train-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.loss-ladder { display: flex; flex-direction: column; gap: .5rem; }
+
+.loss-row {
+  display: grid;
+  grid-template-columns: 2.6rem minmax(0, 1fr) 6.5rem;
+  gap: .6rem;
+  align-items: center;
+  opacity: .85;
+}
+
+.loss-row.is-current { opacity: 1; }
+
+.loss-label {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--pencil);
+  text-align: right;
+}
+
+.loss-bar { background: var(--pencil); }
+.loss-row.is-current .loss-bar { background: var(--pen); }
+
+.loss-bits {
+  font-family: var(--mono);
+  font-size: .74rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.train-sample {
+  border-left: 1px solid var(--rule);
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.train-text {
+  margin: 0 !important;
+  font-family: var(--mono);
+  font-size: .92rem;
+  line-height: 1.65;
+  color: var(--ink) !important;
+  background: var(--ground);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: .9rem 1rem;
+  overflow-wrap: break-word;
+}
+
+/* ---------- citation exercise (Beat 6) ---------- */
+
+.cite-paragraph p {
+  font-family: var(--serif);
+  font-size: 1.04rem;
+  line-height: 1.7;
+}
+
+.cite-ref {
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--pen);
+  background: none;
+  border: none;
+  border-bottom: 1px dotted var(--pen);
+  padding: 0;
+  cursor: default;
+}
+
+.cite-list {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+
+.cite-card {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--rule-strong);
+  border-radius: 0 3px 3px 0;
+  background: var(--ground);
+  padding: .8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+}
+
+.cite-card.is-right { border-left-color: var(--keep); }
+.cite-card.is-wrong { border-left-color: var(--pen-bright); }
+.cite-card.is-unanswered { border-left-color: var(--pencil-faint); }
+.cite-card.is-flash { border-left-color: var(--pen); background: var(--pen-wash); }
+
+.cite-text { margin: 0 !important; font-size: .9rem; color: var(--ink) !important; }
+
+.cite-marks { display: flex; gap: .5rem; }
+
+.cite-marks .chip.is-chosen {
+  color: var(--pen);
+  border-color: var(--pen);
+  background: var(--pen-wash);
+}
+
+.cite-verdict {
+  margin: 0 !important;
+  font-size: .84rem;
+  color: var(--ink-soft) !important;
+  max-width: none !important;
+}
+
+.cite-card.is-right .cite-verdict { color: var(--keep) !important; }
+.cite-card.is-wrong .cite-verdict { color: var(--ink) !important; }
+
+/* ---------- scale cards (Beat 7) ---------- */
+
+.scale-cards {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.scale-card {
+  background: var(--surface);
+  padding: 1rem 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  opacity: .78;
+  transition: opacity .25s ease;
+}
+
+.scale-card.is-on { opacity: 1; }
+
+.scale-era {
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--pen);
+}
+
+.scale-card strong { font-size: .95rem; line-height: 1.3; }
+
+.scale-card p {
+  margin: 0 !important;
+  font-size: .82rem;
+  color: var(--ink-soft) !important;
+  max-width: none !important;
+}
+
+/* ---------- foundation model cards (Beat 8) ---------- */
+
+.fm-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.fm-card {
+  background: var(--surface);
+  padding: 0;
+}
+
+.fm-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+  position: relative;
+  padding-right: 2.2rem;
+}
+
+.fm-card summary::after,
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--mono);
+  color: var(--pencil);
+}
+
+.fm-card[open] summary::after,
+.faq-item[open] summary::after { content: "\2212"; }
+
+.fm-card summary::-webkit-details-marker { display: none; }
+.fm-card summary:hover { background: var(--pen-wash); }
+
+.fm-card summary strong { font-size: 1.02rem; }
+
+.fm-card summary span {
+  font-family: var(--mono);
+  font-size: .62rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--pencil-faint);
+}
+
+.fm-card[open] summary { border-bottom: 1px solid var(--rule); }
+
+.fm-card > p {
+  margin: .8rem 1.1rem 0 !important;
+  font-size: .88rem;
+  color: var(--ink-soft) !important;
+  max-width: none !important;
+}
+
+.fm-card > p:last-of-type { margin-bottom: 1rem !important; }
+
+.fm-io {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--pen);
+}
+
+.fm-idea {
+  font-family: var(--serif) !important;
+  font-style: italic;
+  color: var(--pencil) !important;
+}
+
+/* ---------- quiz (Beat 9) ---------- */
+
+.quiz { display: flex; flex-direction: column; gap: 1rem; margin-top: .4rem; }
+
+.quiz-q {
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--rule-strong);
+  border-radius: 0 3px 3px 0;
+  padding: .9rem 1.1rem;
+  background: var(--ground);
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.quiz-q.is-right { border-left-color: var(--keep); }
+.quiz-q.is-wrong { border-left-color: var(--pen-bright); }
+
+.quiz-prompt { margin: 0 !important; font-size: .94rem; color: var(--ink) !important; max-width: none !important; }
+
+.quiz-choices { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.quiz-choices .chip.is-chosen {
+  color: var(--pen);
+  border-color: var(--pen);
+  background: var(--pen-wash);
+}
+
+.quiz-choices .chip:disabled { cursor: default; opacity: .75; }
+.quiz-choices .chip.is-chosen:disabled { opacity: 1; }
+
+.quiz-verdict {
+  margin: 0 !important;
+  font-size: .86rem;
+  color: var(--ink-soft) !important;
+  max-width: none !important;
+}
+
+.quiz-q.is-right .quiz-verdict { color: var(--keep) !important; }
+.quiz-q.is-wrong .quiz-verdict { color: var(--ink) !important; }
+
+.quiz-choices .chip.is-answer {
+  color: var(--keep);
+  border-color: var(--keep);
+  background: var(--keep-wash);
+}
+
+/* ---------- failure table (Beat 9) ---------- */
+
+.table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  margin-top: 1.1rem;
+  max-width: 48rem;
+}
+
+.beat-table { border-collapse: collapse; width: 100%; min-width: 34rem; }
+
+.beat-table th, .beat-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: .7rem 1rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: .88rem;
+}
+
+.beat-table thead th {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--pencil);
+  font-weight: 500;
+  border-bottom: 1px solid var(--rule-strong);
+  white-space: nowrap;
+}
+
+.beat-table tbody tr:last-child th,
+.beat-table tbody tr:last-child td { border-bottom: none; }
+
+.beat-table td:first-child { color: var(--ink); }
+.beat-table td { color: var(--ink-soft); }
+
+/* ---------- appendix (Beat 10) ---------- */
+
+.beat-h3 {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 2.4rem 0 0;
+}
+
+.glossary { margin: 1rem 0 0; max-width: 44rem; }
+
+.glossary dt {
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: .8rem;
+}
+
+.glossary dt::after { content: ":"; color: var(--pencil-faint); font-weight: 400; }
+
+.glossary dd {
+  margin: 0;
+  display: inline;
+  color: var(--ink-soft);
+  font-size: .96rem;
+}
+
+.faq { display: flex; flex-direction: column; gap: .6rem; margin-top: 1rem; max-width: 48rem; }
+
+.faq-item {
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: var(--surface);
+  padding: 0;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: .8rem 1.1rem;
+  font-weight: 600;
+  font-size: .95rem;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary:hover { background: var(--pen-wash); border-radius: 3px; }
+.faq-item[open] summary { border-bottom: 1px solid var(--rule); }
+
+.faq-item > p {
+  margin: .8rem 1.1rem 1rem !important;
+  font-size: .92rem;
+  color: var(--ink-soft) !important;
+  max-width: none !important;
+}
+
+.shelf {
+  margin: 1rem 0 0;
+  padding-left: 1.2rem;
+  max-width: 44rem;
+  color: var(--ink-soft);
+}
+
+.shelf li { margin: .35rem 0; font-size: .95rem; }
+
+@media (max-width: 40rem) {
+  .train-grid { grid-template-columns: minmax(0, 1fr); }
+  .train-sample { border-left: none; border-top: 1px solid var(--rule); padding-left: 0; padding-top: 1rem; }
+}
+
+/* Spacing for control rows that follow a visual, and sizing so secondary
+   chips hold their own next to a primary button. */
+.cloud-stage + .demo-form,
+.cite-list + .demo-form,
+.quiz + .demo-form { margin-top: 1.1rem; }
+
+.demo-form .chip { padding: .5rem .9rem; font-size: .74rem; }
+

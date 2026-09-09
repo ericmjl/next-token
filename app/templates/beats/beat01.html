@@ -1,0 +1,32 @@
+<section class="beat" id="beat-01">
+  <p class="eyebrow">Beat 01</p>
+  <h2>A language model is a very well-read autocomplete</h2>
+  <p>Everything you'll see this fall, from code that writes itself to summaries of a
+  thousand papers, rests on one core mechanism. The model looks at the text so far and
+  predicts what comes next. One chunk at a time, over and over.</p>
+  <p>That sounds too small to matter. The surprise of the last few years is what the trick
+  looks like when you do it extremely well, over more text than any person could read in
+  a hundred lifetimes. That's the whole arc of this page, and my goal is that you leave
+  able to trace any answer a model gives you back to this one mechanism.</p>
+
+  <div class="demo" data-demo="continue">
+    <p class="predict">Before I click: call out how you'd finish this sentence. Then we
+    see what four short paragraphs of reading gets the model.</p>
+    <p class="demo-lede">Try it. The model below read four short paragraphs of biology
+    text and counted which letters follow which. Give it the start of a sentence, then let
+    it take over.</p>
+    <form class="demo-form" hx-get="/api/continue" hx-target="#continue-out" hx-swap="innerHTML" hx-disabled-elt="find button">
+      <label class="visually-hidden" for="continue-prefix">Start of a sentence</label>
+      <input type="text" id="continue-prefix" name="prefix" value="The polymerase chain reaction " maxlength="120" autocomplete="off" spellcheck="false" required>
+      <input type="hidden" name="temperature" value="0.8">
+      <input type="hidden" name="n" value="90">
+      <button class="btn" type="submit">Let it finish the thought</button>
+    </form>
+    <div id="continue-out" class="demo-out" aria-live="polite">
+      <p class="demo-note">The continuation will appear here.</p>
+    </div>
+    <p class="demo-caption">It has no idea what PCR is. It still writes biology-shaped
+    words, because it learned the shape of the text it read. Hold onto that gap between
+    what it knows and what it produces; we come back to it in Beat 6.</p>
+  </div>
+</section>

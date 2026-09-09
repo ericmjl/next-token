@@ -1,0 +1,65 @@
+<section class="beat" id="beat-07">
+  <p class="eyebrow">Beat 07</p>
+  <h2>What changes when everything gets bigger</h2>
+  <p>Same recipe, more of everything: more parameters to hold patterns, more text to learn
+  them from, more compute to push the training loop. For years the gains looked politely
+  incremental: better grammar, fewer nonsense words. Then, somewhere past a few billion
+  parameters, abilities showed up that nobody had explicitly programmed: following
+  instructions in plain language, picking up a task from a couple of examples in the
+  prompt, working through a problem step by step: what researchers call emergence.
+  Researchers still argue how sharp those jumps really are; that they arrived with scale
+  rather than with code is the part everyone agrees on.</p>
+
+  <div class="demo" data-demo="scale">
+    <p class="demo-lede">Drag across ten orders of magnitude and watch what the same
+    mechanism picks up along the way. The counts are public through GPT-3; newer labs keep
+    their numbers quiet, so treat the right edge as "more, undisclosed".</p>
+    <div class="temp-row">
+      <label for="scale-slider">Parameters</label>
+      <input type="range" id="scale-slider" min="3" max="13" step="0.1" value="3">
+      <output id="scale-readout" class="temp-readout" for="scale-slider">1 thousand</output>
+    </div>
+    <ul class="scale-cards">
+      <li class="scale-card" data-exp="3">
+        <span class="scale-era">1940s&ndash;now</span>
+        <strong>Common letter patterns</strong>
+        <p>Counts which chunks follow which. The toy model on this page lives here, at a few thousand counted parameters.</p>
+      </li>
+      <li class="scale-card" data-exp="6">
+        <span class="scale-era">2013</span>
+        <strong>Word meanings as geometry</strong>
+        <p>Words become long lists of numbers, and similar words get similar lists, so word math starts to work: <em>king &minus; man + woman</em> lands near <em>queen</em>.</p>
+      </li>
+      <li class="scale-card" data-exp="8">
+        <span class="scale-era">2018</span>
+        <strong>Fluent paragraphs</strong>
+        <p>GPT-1, 117 million parameters. The transformer recipe starts writing decent prose on almost any prompt.</p>
+      </li>
+      <li class="scale-card" data-exp="9">
+        <span class="scale-era">2019</span>
+        <strong>Whole essays, wobbly facts</strong>
+        <p>GPT-2, 1.5 billion. Multi-paragraph text that reads clean, with facts that arrive loose.</p>
+      </li>
+      <li class="scale-card" data-exp="11">
+        <span class="scale-era">2020</span>
+        <strong>Learns from examples in the prompt</strong>
+        <p>GPT-3, 175 billion. Show two examples, ask for a third. Nobody programmed this; researchers still debate the shape of the jump, but it arrived with scale.</p>
+      </li>
+      <li class="scale-card" data-exp="12">
+        <span class="scale-era">2022</span>
+        <strong>Follows plain-language instructions</strong>
+        <p>Chat-era models, tuned to do what you ask instead of completing text. The apps in your browser tabs live here.</p>
+      </li>
+      <li class="scale-card" data-exp="13">
+        <span class="scale-era">frontier</span>
+        <strong>Reasons step by step, drives tools</strong>
+        <p>Sizes undisclosed. Multi-step reasoning and tool use become part of the loop.</p>
+      </li>
+    </ul>
+    <p class="demo-caption">One thing scale didn't buy: the dice and the library's edge
+    survive every order of magnitude, so fluent and true stay different words at any
+    slider position. Emergence at scale is the bridge to the last big idea on this page,
+    and the reason your field is building foundation models instead of training a fresh
+    network for every question.</p>
+  </div>
+</section>

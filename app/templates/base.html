@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}next-token{% endblock %} · AI for Bioinformatics Bootcamp</title>
+  <meta name="description" content="An interactive explainer of how LLMs actually work, built for the UMass Chan AI for Bioinformatics bootcamp.">
+  <script>
+    /* Runs before paint so a reader who chose dark never sees a flash of light. */
+    (function () {
+      try {
+        var t = localStorage.getItem('bootcamp-theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="stylesheet" href="/static/css/theme.css">
+  <link rel="stylesheet" href="/static/css/demos.css">
+</head>
+<body>
+
+<a class="visually-hidden skip-link" href="#main">Skip to the lesson</a>
+
+<div class="topbar">
+  <div class="wrap topbar-row">
+    <div class="brand">
+      <span class="brand-mark">next&#8209;token</span>
+      <span class="brand-sub">AI for Bioinformatics Bootcamp<br>Session 1 · Part A</span>
+    </div>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Dark theme" aria-pressed="false" title="Toggle dark mode">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Teaching beats">
+    <span class="subhead">The ten beats</span>
+    <ol class="rail-list">
+      {% for b in beats %}
+      <li><a href="#{{ b.id }}" data-beat="{{ b.id }}"><span class="rail-num">{{ b.num }}</span>{{ b.label }}</a></li>
+      {% endfor %}
+    </ol>
+    <div class="rail-tools">
+      <span class="subhead">On stage</span>
+      <button class="chip" id="presenter-toggle" type="button" aria-pressed="false" title="Bump text size for the room (p)">Presenter mode <kbd>P</kbd></button>
+      <p class="rail-hint">Jump between beats with <kbd>←</kbd> <kbd>→</kbd> or <kbd>J</kbd> <kbd>K</kbd>.</p>
+    </div>
+  </nav>
+
+  <main class="content" id="main">
+    {% block content %}{% endblock %}
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Built for the UMass Chan AI for Bioinformatics bootcamp</span>
+    <span>Part A · How AI actually works</span>
+    <span>Eric Ma · Alper Kucukural · Tommy Tang</span>
+  </div>
+</footer>
+
+<script src="/static/js/htmx.min.js" defer></script>
+<script src="/static/js/nav.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

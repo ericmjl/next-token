@@ -1,0 +1,17 @@
+<div class="roll-grid">
+  <div class="bars" role="img" aria-label="Top candidate next characters and their probabilities">
+    {% for ch, p in top %}
+    <div class="bar-row">
+      <code class="bar-char{{ ' is-picked' if ch == picked }}" aria-hidden="true">{{ ch }}</code>
+      <span class="bar-track"><span class="bar-fill{{ ' is-picked' if ch == picked }}" style="width: {{ (p * 100) | round(1) }}%"></span></span>
+      <span class="bar-pct{{ ' is-picked' if ch == picked }}">{{ (p * 100) | round(1) }}%</span>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="roll-result">
+    <span class="subhead">The pick</span>
+    <code class="picked-char">{{ picked }}</code>
+    <p class="demo-note">rolled at temperature {{ temperature }}</p>
+    <p class="demo-note">Bars show the list after temperature reshapes it; same prompt, new roll, every click.</p>
+  </div>
+</div>
