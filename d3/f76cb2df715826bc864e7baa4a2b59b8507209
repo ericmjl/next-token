@@ -1,0 +1,42 @@
+app/static/js/cloud.js
+  h_923f9eef54c2c1 114-115
+app/templates/beats/beat01.html
+  h_923f9eef54c2c1 6,9-10,29-31
+app/templates/beats/beat02.html
+  h_923f9eef54c2c1 11-14,31-32
+app/templates/beats/beat03.html
+  h_923f9eef54c2c1 30
+app/templates/beats/beat04.html
+  h_923f9eef54c2c1 10-14
+app/templates/beats/beat05.html
+  h_923f9eef54c2c1 3,7-8,10-14,36-37
+app/templates/beats/beat06.html
+  h_923f9eef54c2c1 3
+app/templates/beats/beat07.html
+  h_923f9eef54c2c1 26,41,51,56,61-63
+app/templates/beats/beat08.html
+  h_923f9eef54c2c1 68-69,143-144,177-178,181-183
+app/templates/beats/beat09.html
+  h_923f9eef54c2c1 5-6,45-46,104-107
+app/templates/beats/beat10.html
+  h_923f9eef54c2c1 4-6,15,20-21,51,55-56,61-65,69,76
+app/templates/beats/thanks.html
+  h_923f9eef54c2c1 1-13
+app/templates/index.html
+  h_923f9eef54c2c1 8-11,26
+app/templates/partials/roll.html
+  h_923f9eef54c2c1 14-15
+app/templates/partials/training.html
+  h_923f9eef54c2c1 11,16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2",
+  "base_commit_sha": "d3f76cb2df715826bc864e7baa4a2b59b8507209",
+  "prompts": {},
+  "humans": {
+    "h_923f9eef54c2c1": {
+      "author": "Eric Ma <ericmajinglong@gmail.com>"
+    }
+  }
+}
