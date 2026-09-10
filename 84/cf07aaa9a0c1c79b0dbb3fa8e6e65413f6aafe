@@ -1,0 +1,14 @@
+.gitignore
+  h_923f9eef54c2c1 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "84cf07aaa9a0c1c79b0dbb3fa8e6e65413f6aafe",
+  "prompts": {},
+  "humans": {
+    "h_923f9eef54c2c1": {
+      "author": "Eric Ma <ericmajinglong@gmail.com>"
+    }
+  }
+}
