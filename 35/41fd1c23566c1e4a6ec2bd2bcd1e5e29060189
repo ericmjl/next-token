@@ -1,0 +1,20 @@
+api/index.py
+  h_923f9eef54c2c1 1-21
+api/tiktoken-cache/9b5ad71b2ce5302211f9c61530b329a4922fc6a4
+  h_923f9eef54c2c1 1-100256
+requirements.txt
+  h_923f9eef54c2c1 1-5
+vercel.json
+  h_923f9eef54c2c1 1-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "3541fd1c23566c1e4a6ec2bd2bcd1e5e29060189",
+  "prompts": {},
+  "humans": {
+    "h_923f9eef54c2c1": {
+      "author": "Eric Ma <ericmajinglong@gmail.com>"
+    }
+  }
+}
