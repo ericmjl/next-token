@@ -13,43 +13,167 @@
   <div class="demo" data-demo="foundation">
     <p class="predict">Hands up: proteins, genes, regulatory DNA, or single cells? Your
     votes pick which cards I open.</p>
-    <p class="demo-lede">Open a card to see what goes in and what comes out; every one is
-    the same recipe, pointed somewhere new.</p>
+    <p class="demo-lede">Open a card to see what goes in and what comes out; the block in
+    the middle is the same in every card, which is the whole point.</p>
     <div class="fm-cards">
       <details class="fm-card">
         <summary><strong>Text LLMs</strong><span>GPT, Claude, Llama</span></summary>
-        <p><span class="fm-io">In:</span> your prompt, as tokens. <span class="fm-io">Out:</span>
-        the next tokens, sampled at some temperature, over and over.</p>
-        <p class="fm-idea">Beats 1 through 7 are this card. Everything else here is the same
-        recipe pointed at a different kind of sequence.</p>
+        <svg class="fm-pipe" viewBox="0 0 640 160" role="img" aria-label="In: your prompt, as tokens. Out: the next tokens, sampled at some temperature, over and over.">
+          <defs><marker id="tx-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="pipe-arrowhead"/></marker></defs>
+          <text class="pipe-io-label" x="10" y="26">IN</text>
+          <text class="pipe-io-label" x="505" y="26">OUT</text>
+          <rect class="pipe-chip" x="10" y="62" width="58" height="26" rx="4"/>
+          <text class="pipe-txt" x="39" y="80">your</text>
+          <rect class="pipe-chip" x="76" y="62" width="72" height="26" rx="4"/>
+          <text class="pipe-txt" x="112" y="80">prompt</text>
+          <rect class="pipe-chip" x="156" y="62" width="32" height="26" rx="4"/>
+          <text class="pipe-txt" x="172" y="80">as</text>
+          <rect class="pipe-chip" x="196" y="62" width="40" height="26" rx="4"/>
+          <text class="pipe-txt" x="216" y="80">&#183;&#183;&#183;</text>
+          <line class="pipe-arrow" x1="262" y1="75" x2="290" y2="75" marker-end="url(#tx-arrowhead)"/>
+          <rect class="pipe-block-rect" x="300" y="48" width="150" height="54" rx="8"/>
+          <text class="pipe-block-txt" x="375" y="71">sequence model</text>
+          <text class="pipe-sub" x="375" y="89">same machinery</text>
+          <line class="pipe-arrow" x1="458" y1="75" x2="486" y2="75" marker-end="url(#tx-arrowhead)"/>
+          <rect class="pipe-out-chip" x="500" y="62" width="124" height="26" rx="4"/>
+          <text class="pipe-out-txt" x="562" y="80">next token</text>
+          <text class="pipe-cap" x="10" y="148">chopped into tokens</text>
+          <text class="pipe-cap" x="500" y="148">sampled, over and over</text>
+        </svg>
+        <p class="fm-idea">Sections 1 through 7 are this card. Everything else here is the
+        same recipe pointed at a different kind of sequence.</p>
       </details>
       <details class="fm-card">
         <summary><strong>AlphaFold 2</strong><span>protein structure, 2021</span></summary>
-        <p><span class="fm-io">In:</span> a protein's amino-acid sequence, with related
-        sequences. <span class="fm-io">Out:</span> the folded three-dimensional structure.</p>
-        <p class="fm-idea">Sequence treated as a language; structure read out from the patterns across related sequences.</p>
+        <svg class="fm-pipe" viewBox="0 0 640 160" role="img" aria-label="In: a protein's amino-acid sequence, with related sequences. Out: the folded three-dimensional structure.">
+          <defs><marker id="af-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="pipe-arrowhead"/></marker></defs>
+          <text class="pipe-io-label" x="10" y="26">IN</text>
+          <text class="pipe-io-label" x="505" y="26">OUT</text>
+          <line class="pipe-backbone" x1="19" y1="75" x2="159" y2="75"/>
+          <circle class="pipe-bead" cx="19" cy="75" r="9"/><text class="pipe-letter" x="19" y="79">M</text>
+          <circle class="pipe-bead" cx="50" cy="75" r="9"/><text class="pipe-letter" x="50" y="79">V</text>
+          <circle class="pipe-bead" cx="81" cy="75" r="9"/><text class="pipe-letter" x="81" y="79">L</text>
+          <circle class="pipe-bead" cx="112" cy="75" r="9"/><text class="pipe-letter" x="112" y="79">S</text>
+          <circle class="pipe-bead" cx="143" cy="75" r="9"/><text class="pipe-letter" x="143" y="79">G</text>
+          <text class="pipe-txt" x="172" y="80">&#183;&#183;&#183;</text>
+          <line class="pipe-arrow" x1="262" y1="75" x2="290" y2="75" marker-end="url(#af-arrowhead)"/>
+          <rect class="pipe-block-rect" x="300" y="48" width="150" height="54" rx="8"/>
+          <text class="pipe-block-txt" x="375" y="71">sequence model</text>
+          <text class="pipe-sub" x="375" y="89">same machinery</text>
+          <line class="pipe-arrow" x1="458" y1="75" x2="486" y2="75" marker-end="url(#af-arrowhead)"/>
+          <polyline class="pipe-ribbon" points="505,102 532,52 560,88 588,46 614,78 630,56"/>
+          <text class="pipe-cap" x="10" y="148">amino-acid sequence, with related sequences</text>
+          <text class="pipe-cap" x="500" y="148">the folded 3-D structure</text>
+        </svg>
+        <p class="fm-idea">Sequence treated as a language; structure read out from the
+        patterns across related sequences.</p>
       </details>
       <details class="fm-card">
         <summary><strong>Geneformer</strong><span>network biology, 2023</span></summary>
-        <p><span class="fm-io">In:</span> a cell's genes, ranked by how strongly they are
-        expressed. <span class="fm-io">Out:</span> gene representations that fine-tune to
-        predict what happens when a gene is perturbed.</p>
+        <svg class="fm-pipe" viewBox="0 0 640 160" role="img" aria-label="In: a cell's genes, ranked by how strongly they are expressed. Out: gene representations that fine-tune to predict what happens when a gene is perturbed.">
+          <defs><marker id="gf-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="pipe-arrowhead"/></marker></defs>
+          <text class="pipe-io-label" x="10" y="26">IN</text>
+          <text class="pipe-io-label" x="505" y="26">OUT</text>
+          <rect class="pipe-chip" x="10" y="36" width="130" height="26" rx="4"/>
+          <text class="pipe-rank" x="20" y="54">1 &#183; GENE-A</text>
+          <rect class="pipe-chip" x="10" y="68" width="130" height="26" rx="4"/>
+          <text class="pipe-rank" x="20" y="86">2 &#183; GENE-C</text>
+          <rect class="pipe-chip" x="10" y="100" width="130" height="26" rx="4"/>
+          <text class="pipe-rank" x="20" y="118">3 &#183; GENE-B</text>
+          <line class="pipe-arrow" x1="262" y1="75" x2="290" y2="75" marker-end="url(#gf-arrowhead)"/>
+          <rect class="pipe-block-rect" x="300" y="48" width="150" height="54" rx="8"/>
+          <text class="pipe-block-txt" x="375" y="71">sequence model</text>
+          <text class="pipe-sub" x="375" y="89">same machinery</text>
+          <line class="pipe-arrow" x1="458" y1="75" x2="486" y2="75" marker-end="url(#gf-arrowhead)"/>
+          <line class="pipe-edge" x1="540" y1="45" x2="570" y2="75"/>
+          <line class="pipe-edge" x1="600" y1="45" x2="570" y2="75"/>
+          <line class="pipe-edge" x1="540" y1="105" x2="570" y2="75"/>
+          <line class="pipe-edge" x1="600" y1="105" x2="570" y2="75"/>
+          <line class="pipe-edge" x1="540" y1="45" x2="540" y2="105"/>
+          <line class="pipe-edge" x1="600" y1="45" x2="600" y2="105"/>
+          <circle class="pipe-node" cx="540" cy="45" r="9"/>
+          <circle class="pipe-node" cx="600" cy="45" r="9"/>
+          <circle class="pipe-node" cx="570" cy="75" r="9"/>
+          <circle class="pipe-node" cx="540" cy="105" r="9"/>
+          <circle class="pipe-node" cx="600" cy="105" r="9"/>
+          <text class="pipe-cap" x="10" y="148">genes, ranked by expression</text>
+          <text class="pipe-cap" x="500" y="148">which genes belong together</text>
+        </svg>
         <p class="fm-idea">Tokens are genes; predicting missing genes becomes predicting
         which genes belong together in a working cell.</p>
       </details>
       <details class="fm-card">
         <summary><strong>scGPT</strong><span>single-cell analysis, 2023</span></summary>
-        <p><span class="fm-io">In:</span> single-cell expression profiles.
-        <span class="fm-io">Out:</span> cell annotations, batch integration, perturbation
-        predictions, after light fine-tuning.</p>
+        <svg class="fm-pipe" viewBox="0 0 640 160" role="img" aria-label="In: single-cell expression profiles. Out: cell annotations, batch integration, perturbation predictions, after light fine-tuning.">
+          <defs><marker id="sc-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="pipe-arrowhead"/></marker></defs>
+          <text class="pipe-io-label" x="10" y="26">IN</text>
+          <text class="pipe-io-label" x="505" y="26">OUT</text>
+          <rect class="pipe-cell" x="20" y="47" width="26" height="26" fill-opacity="0.15"/>
+          <rect class="pipe-cell" x="52" y="47" width="26" height="26" fill-opacity="0.55"/>
+          <rect class="pipe-cell" x="84" y="47" width="26" height="26" fill-opacity="0.8"/>
+          <rect class="pipe-cell" x="116" y="47" width="26" height="26" fill-opacity="0.3"/>
+          <rect class="pipe-cell" x="20" y="79" width="26" height="26" fill-opacity="0.65"/>
+          <rect class="pipe-cell" x="52" y="79" width="26" height="26" fill-opacity="0.25"/>
+          <rect class="pipe-cell" x="84" y="79" width="26" height="26" fill-opacity="0.75"/>
+          <rect class="pipe-cell" x="116" y="79" width="26" height="26" fill-opacity="0.45"/>
+          <line class="pipe-arrow" x1="262" y1="75" x2="290" y2="75" marker-end="url(#sc-arrowhead)"/>
+          <rect class="pipe-block-rect" x="300" y="48" width="150" height="54" rx="8"/>
+          <text class="pipe-block-txt" x="375" y="71">sequence model</text>
+          <text class="pipe-sub" x="375" y="89">same machinery</text>
+          <line class="pipe-arrow" x1="458" y1="75" x2="486" y2="75" marker-end="url(#sc-arrowhead)"/>
+          <rect class="pipe-cell-out" x="505" y="47" width="26" height="26"/>
+          <text class="pipe-letter-out" x="518" y="65">A</text>
+          <rect class="pipe-cell-out" x="537" y="47" width="26" height="26"/>
+          <text class="pipe-letter-out" x="550" y="65">B</text>
+          <rect class="pipe-cell-out" x="569" y="47" width="26" height="26"/>
+          <text class="pipe-letter-out" x="582" y="65">A</text>
+          <rect class="pipe-cell-out" x="601" y="47" width="26" height="26"/>
+          <text class="pipe-letter-out" x="614" y="65">C</text>
+          <rect class="pipe-cell-out" x="505" y="79" width="26" height="26"/>
+          <text class="pipe-letter-out" x="518" y="97">A</text>
+          <rect class="pipe-cell-out" x="537" y="79" width="26" height="26"/>
+          <text class="pipe-letter-out" x="550" y="97">B</text>
+          <rect class="pipe-cell-out" x="569" y="79" width="26" height="26"/>
+          <text class="pipe-letter-out" x="582" y="97">C</text>
+          <rect class="pipe-cell-out" x="601" y="79" width="26" height="26"/>
+          <text class="pipe-letter-out" x="614" y="97">A</text>
+          <text class="pipe-cap" x="10" y="148">expression profiles, one per cell</text>
+          <text class="pipe-cap" x="500" y="148">annotated, integrated cells</text>
+        </svg>
         <p class="fm-idea">One pretrained model, many single-cell chores. The Session 5 and
         6 analyses run in this world.</p>
       </details>
       <details class="fm-card">
         <summary><strong>Enformer</strong><span>gene regulation, 2021</span></summary>
-        <p><span class="fm-io">In:</span> a long stretch of regulatory DNA.
-        <span class="fm-io">Out:</span> predicted expression of nearby genes, across cell
-        types.</p>
+        <svg class="fm-pipe" viewBox="0 0 640 160" role="img" aria-label="In: a long stretch of regulatory DNA. Out: predicted expression of nearby genes, across cell types.">
+          <defs><marker id="en-arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="pipe-arrowhead"/></marker></defs>
+          <text class="pipe-io-label" x="10" y="26">IN</text>
+          <text class="pipe-io-label" x="505" y="26">OUT</text>
+          <line class="pipe-backbone" x1="15" y1="88" x2="245" y2="88"/>
+          <text class="pipe-letter" x="20" y="80">A</text>
+          <text class="pipe-letter" x="40" y="80">T</text>
+          <text class="pipe-letter" x="60" y="80">G</text>
+          <text class="pipe-letter" x="80" y="80">C</text>
+          <text class="pipe-letter" x="100" y="80">A</text>
+          <text class="pipe-letter" x="120" y="80">T</text>
+          <text class="pipe-letter" x="140" y="80">G</text>
+          <text class="pipe-letter" x="160" y="80">G</text>
+          <text class="pipe-letter" x="180" y="80">C</text>
+          <text class="pipe-letter" x="200" y="80">T</text>
+          <text class="pipe-letter" x="220" y="80">A</text>
+          <line class="pipe-arrow" x1="262" y1="75" x2="290" y2="75" marker-end="url(#en-arrowhead)"/>
+          <rect class="pipe-block-rect" x="300" y="48" width="150" height="54" rx="8"/>
+          <text class="pipe-block-txt" x="375" y="71">sequence model</text>
+          <text class="pipe-sub" x="375" y="89">same machinery</text>
+          <line class="pipe-arrow" x1="458" y1="75" x2="486" y2="75" marker-end="url(#en-arrowhead)"/>
+          <line class="pipe-backbone" x1="505" y1="112" x2="632" y2="112"/>
+          <rect class="pipe-bar" x="514" y="80" width="16" height="32" rx="2"/>
+          <rect class="pipe-bar" x="548" y="52" width="16" height="60" rx="2"/>
+          <rect class="pipe-bar" x="582" y="68" width="16" height="44" rx="2"/>
+          <rect class="pipe-bar" x="616" y="40" width="16" height="72" rx="2"/>
+          <text class="pipe-cap" x="10" y="148">one long stretch of regulatory DNA</text>
+          <text class="pipe-cap" x="500" y="148">expression of nearby genes, per cell type</text>
+        </svg>
         <p class="fm-idea">Reads the genome's control panel and predicts its output.</p>
       </details>
     </div>

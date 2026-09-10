@@ -442,13 +442,43 @@
 
 .fm-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: 1px;
   background: var(--rule);
   border: 1px solid var(--rule);
   border-radius: 4px;
   overflow: hidden;
 }
+
+.fm-card svg.fm-pipe {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: .5rem .75rem .1rem;
+}
+
+.pipe-arrow { stroke: var(--pen); stroke-width: 2.5; }
+.pipe-arrowhead { fill: var(--pen); }
+.pipe-backbone { stroke: var(--rule-strong); }
+.pipe-chip { fill: var(--surface); stroke: var(--rule-strong); }
+.pipe-block-rect { fill: var(--pen-wash); stroke: var(--pen); }
+.pipe-block-txt { font-family: var(--mono); font-size: 13px; font-weight: 600; fill: var(--pen); text-anchor: middle; }
+.pipe-sub { font-family: var(--mono); font-size: 10.5px; fill: var(--pencil); text-anchor: middle; }
+.pipe-txt { font-family: var(--mono); font-size: 12.5px; fill: var(--ink-soft); text-anchor: middle; }
+.pipe-letter { font-family: var(--mono); font-size: 11px; fill: var(--ink); text-anchor: middle; }
+.pipe-rank { font-family: var(--mono); font-size: 12px; fill: var(--ink-soft); }
+.pipe-out-chip { fill: var(--keep-wash); stroke: var(--keep); }
+.pipe-out-txt { font-family: var(--mono); font-size: 12.5px; font-weight: 700; fill: var(--keep); text-anchor: middle; }
+.pipe-io-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; fill: var(--pencil); }
+.pipe-cap { font-family: var(--mono); font-size: 11px; fill: var(--pencil); }
+.pipe-bead { fill: var(--surface); stroke: var(--rule-strong); }
+.pipe-ribbon { fill: none; stroke: var(--keep); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.pipe-node { fill: var(--keep-wash); stroke: var(--keep); }
+.pipe-edge { stroke: var(--pen); stroke-width: 1.5; opacity: .45; }
+.pipe-cell { fill: var(--pen); stroke: var(--rule-strong); }
+.pipe-cell-out { fill: var(--keep-wash); stroke: var(--keep); }
+.pipe-letter-out { font-family: var(--mono); font-size: 11px; font-weight: 700; fill: var(--keep); text-anchor: middle; }
+.pipe-bar { fill: var(--pen); }
 
 .fm-card {
   background: var(--surface);
