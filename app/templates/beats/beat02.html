@@ -8,9 +8,10 @@
   everything you typed.</p>
   <p>Tokenization explains a family of quirks that otherwise look like stupidity. Ask a
   model how many letters are in <em>deoxyribonucleic</em> and it may miscount, because it
-  never saw letters at all; it saw opaque ID numbers. The same goes for exact strings from
-  the lab bench, where one wrong letter changes what a reagent or a variant means. Watch
-  what a production tokenizer does to vocabulary your lab uses daily.</p>
+  never saw letters at all; it saw opaque ID numbers. Exact strings from the lab bench hit
+  the same wall: the model sees token IDs, not characters, and one wrong letter changes
+  what a reagent or a variant means. Watch what a production tokenizer does to vocabulary
+  your lab uses daily.</p>
 
   <div class="demo" data-demo="tokens">
     <p class="predict">Where do the boundaries land inside <em>deoxyribonucleic</em>?
@@ -27,7 +28,7 @@
     </div>
     <p class="demo-caption">Every chip is one token, with its ID number underneath. The
     model's whole world is sequences of these IDs. Our toy model reads one letter at a
-    time so you can watch it work; production models read tokens. Same trick, different
-    chunk size.</p>
+    time so you can watch it work; production models read tokens. It's the same trick with
+    a different chunk size.</p>
   </div>
 </section>

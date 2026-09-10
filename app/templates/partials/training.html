@@ -8,11 +8,11 @@
       <span class="loss-bits">{{ s.bits }} bits/char</span>
     </div>
     {% endfor %}
-    <p class="demo-note">Lower is better. Scored on text the model never trained on.</p>
+    <p class="demo-note">Lower is better, and we score it on text the model never trained on.</p>
   </div>
   <div class="train-sample">
     <span class="subhead">What it writes</span>
     <p class="train-text">{{ sample }}</p>
-    <p class="demo-note">After reading {{ chars }} characters, {{ frac }}% of the library, prompted with "The cell".</p>
+    <p class="demo-note">The model read {{ chars }} characters, {{ frac }}% of the library, and then we prompted it with "The cell".</p>
   </div>
 </div>

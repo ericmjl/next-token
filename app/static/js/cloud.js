@@ -111,8 +111,8 @@
         var dy = (p.y - p.lobe.y) / p.lobe.sy;
         var edge = Math.sqrt(dx * dx + dy * dy) > 1.6;
         cloudCaption.textContent = edge
-          ? "Landed out toward the edge of the cloud, and still inside it. This is the region where your questions feel novel and the model's library says: seen it."
-          : "Landed deep inside the cloud, surrounded by the patterns it read. In-distribution for the model, however unusual it felt to ask.";
+          ? "The question landed out toward the edge of the cloud, and still inside it. This is the region where your questions feel novel and the model's library says: seen it."
+          : "Landed deep inside the cloud, surrounded by the patterns it read. That's the ML term for it, in-distribution: however unusual your question felt, the model has read its neighbors.";
       }
     });
   }

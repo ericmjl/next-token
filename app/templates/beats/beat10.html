@@ -1,9 +1,9 @@
 <section class="beat" id="beat-10">
   <p class="eyebrow">Appendix</p>
   <h2>Take it with you</h2>
-  <p>Every session is recorded, so this page doubles as the async follow-up. Here is the
-  vocabulary in one place, the questions we expect in the room, and the background shelf
-  if you want to go deeper.</p>
+  <p>Every session is recorded, so nothing here depends on having been in the room. Here
+  is the vocabulary in one place, the questions we expect in the room, and where to go
+  deeper if you want more.</p>
 
   <h3 class="beat-h3">The vocabulary</h3>
   <dl class="glossary">
@@ -12,15 +12,15 @@
     <dt>Next-token prediction</dt>
     <dd>The whole trick: look at the text so far, assign a probability to every possible next token.</dd>
     <dt>Probability distribution</dt>
-    <dd>The full list of those probabilities. The model's answer to every question is one of these lists.</dd>
+    <dd>The full list of probabilities the model assigns, one for each possible next token. The model's answer to every question is one of these lists.</dd>
     <dt>Sampling</dt>
     <dd>Rolling the weighted die: picking one token from the distribution. This is why answers vary.</dd>
     <dt>Temperature</dt>
     <dd>The knob that reshapes the distribution before the roll. Low is cautious, high is adventurous. Set explicitly in API use, hidden in consumer apps.</dd>
+    <dt>Parameters</dt>
+    <dd>The stored numbers inside the model; training adjusts them and every answer runs through them, so scale just means more of them.</dd>
     <dt>Training</dt>
     <dd>The expensive loop: guess the next token everywhere in the library, compare with reality, nudge the parameters.</dd>
-    <dt>Parameters</dt>
-    <dd>The stored numbers, one per dial, that training adjusts and inference uses; scale means more of them.</dd>
     <dt>Inference</dt>
     <dd>Using the trained model to answer. Cheap compared with training; this is what happens when you chat.</dd>
     <dt>Training distribution</dt>
@@ -48,30 +48,32 @@
       <p>The parameters freeze after training. Within one chat, the model rereads the
       whole conversation each turn, which feels like learning but is really a longer
       prefix. Whether the vendor trains on what you type is a separate data-policy
-      question, and Part B has the rules of thumb.</p>
+      question; the short rule is to assume your prompts are retained unless you're on a plan or deployment that says otherwise, and Part B walks through how to check for the tools your lab actually uses.</p>
     </details>
     <details class="faq-item">
       <summary>Which model should my lab use?</summary>
-      <p>That answer lives in the tools segment of this session and Part B. The principle
-      that travels from this page: whichever model you use, its outputs need the same two
+      <p>There's no single right answer; the honest one depends on your task and how sensitive your data is, which is why the tools segment and Part B get concrete. One principle
+      that holds no matter which model you use: its outputs need the same two
       things from you, verification and disclosure.</p>
     </details>
     <details class="faq-item">
       <summary>What about top-p, seeds, the other knobs?</summary>
-      <p>They're siblings of temperature: more ways to reshape the same distribution
-      before the roll. Like temperature, they surface when you use the API and stay hidden
-      in consumer apps.</p>
+      <p>Top-p is a sibling of temperature: another way to reshape the distribution
+      before the roll. A seed is different: it pins the dice, so the same prompt and
+      settings give you the same draw, which is what you want when a result has to
+      reproduce. Like temperature, all of these surface in the API and stay hidden in
+      consumer apps.</p>
     </details>
     <details class="faq-item">
       <summary>Will it take my job?</summary>
-      <p>The line this bootcamp draws: routine, recoverable work gets faster; the judgment
+      <p>The line this bootcamp draws: routine work, the kind where you can check and redo the output, gets faster; the judgment
       that defines research stays yours. Framing the question, calling the outlier,
       answering the reviewer: those remain yours, and AI cannot bear responsibility for
       them.</p>
     </details>
   </div>
 
-  <h3 class="beat-h3">The background shelf</h3>
+  <h3 class="beat-h3">Further reading</h3>
   <ul class="shelf">
     <li><a href="https://www.youtube.com/@WelchLabsVideo">Welch Labs on YouTube</a>, the deep-dive visual series on how LLMs work.</li>
     <li><a href="https://www.youtube.com/@3blue1brown">3Blue1Brown on YouTube</a>, neural networks and transformers as animations.</li>
